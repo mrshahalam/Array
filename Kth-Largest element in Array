@@ -1,0 +1,22 @@
+package com.codewithshah;
+
+
+import java.util.Arrays;
+import java.util.Collections;
+
+public class second {
+     static int size=0;
+       public static int kthelement(int[] arr , int k)
+       {
+           Arrays.sort(arr);
+
+           return arr[size-k];
+       }
+    public static void main(String[] args) {
+       int  arr[] = new int[] {12,3,5,7,19, -56};
+       size = arr.length;
+       int k=2;
+       System.out.print("The K-largest element in the Unsorted array is  "+kthelement(arr, k ));
+
+    }
+}
