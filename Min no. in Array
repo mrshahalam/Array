@@ -1,0 +1,30 @@
+package com.codewithshah;
+import java.io.IOException;
+import  java.util.Scanner;
+public class fifth {
+
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+
+        //Initialize array
+        int [] arr = new int [] {47,7,9,2,456,5,12,78,45,67,4,8,6,55};
+        int max = arr[0];
+        int i=0;
+        while (i< arr.length)
+        {
+            if(max>arr[i])
+            {
+                max=arr[i];
+                i++;
+            }
+            else
+            {
+                i++;
+            }
+        }
+        System.out.print("the max value in the array is "+max);
+    }
+}
+
+
+
