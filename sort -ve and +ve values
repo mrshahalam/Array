@@ -1,0 +1,40 @@
+package com.codewithshah;
+import java.io.IOException;
+import  java.util.Scanner;
+public class fifth
+{
+    public static void sort(int arr[], int size)
+    {
+
+        int pivot =0 , i=-1;
+        for (int j = 0; j < size; j++) {
+            if (arr[j]<pivot)
+            {
+                i++;
+                int temp = arr[i];
+                arr[i]= arr[j];
+                arr[j]= temp;
+            }
+        }
+
+        for (int j = 0; j <size ; j++) {
+            System.out.print(" "+arr[j]);
+        }
+    }
+     public static void main(String[] args) throws IOException
+    {
+
+        Scanner sc = new Scanner(System.in);
+
+        int arr[] ={-2,6,-5,-7,99,-1,5,88,23,87,-76,-34,72,65};
+        int size = arr.length;
+        sort(arr,size);
+
+
+
+
+    }
+}
+
+
+
