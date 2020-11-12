@@ -1,0 +1,36 @@
+package com.codewithshah;
+import java.io.IOException;
+import  java.util.Scanner;
+public class fifth
+{
+    public static void intersection(int arr[], int arr2[] , int size1 , int size2)
+    {
+        int i=0,j=0;
+        while (i< size1 && j<size2)
+        {
+            if (arr[i]<arr2[j])
+                i++;
+            else if(arr[i]>arr2[j])
+                j++;
+            else {
+                System.out.print(arr2[j++] + " ");
+                i++;
+            }
+        }
+    }
+     public static void main(String[] args) throws IOException
+    {
+
+        Scanner sc = new Scanner(System.in);
+
+        int arr[] ={1,2,4,5,6,11,45,78};
+        int arr2[] = {2,3,5,6,7,45};
+        int size1 = arr.length;
+        int size2 = arr2.length;
+        intersection(arr,arr2,size1,size2);
+
+    }
+}
+
+
+
