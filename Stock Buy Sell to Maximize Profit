@@ -1,0 +1,28 @@
+package com.codewithshah;
+import java.io.IOException;
+import java.util.Arrays;
+import  java.math.*;
+import  java.util.Scanner;
+public class fifth
+{
+    public  int maxprofit(int price[]) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < price.length; i++) {
+            if (price[i] < minprice) {
+                minprice = price[i];
+            } else if (price[i] - minprice > maxprofit) {
+                maxprofit = price[i] - minprice;
+            }
+        }
+        return maxprofit;
+    }
+    public static void main(String[] args) throws IOException
+    {
+        Scanner sc = new Scanner(System.in);
+         int price[]={3,2,5,8,4,6,9,12,6};
+         fifth obj = new fifth();
+         System.out.print(obj.maxprofit(price));
+
+    }
+}
