@@ -1,0 +1,53 @@
+------------------------------------------------------------------------------Problem Statement----------------------------------------------------------------------------------
+Given an array of n integers where each value represents the number of chocolates in a packet. Each packet
+can have a variable number of chocolates. There are m students, the task is to distribute chocolate packets such that: 
+
+Each student gets one packet.
+The difference between the number of chocolates in the packet with maximum chocolates and packet with minimum 
+chocolates given to the students is minimum.
+----------------------------------------------------------------------Example ------- More Detail--------------------------------------------------------------------------------
+Input : arr[] = {7, 3, 2, 4, 9, 12, 56} , m = 3 
+Output: Minimum Difference is 2 
+Explanation:
+We have seven packets of chocolates and 
+we need to pick three packets for 3 students 
+If we pick 2, 3 and 4, we get the minimum 
+difference between maximum and minimum packet 
+sizes.
+------------------------------------------------------------------------------Time And Space Complexcity------------------------------------------------------------------------
+                                                      Time Complexity: O(n Log n) as we apply sorting before subarray search.
+                                                      --------------------------------------------------------------------------
+import java.util.Arrays;
+public class alam
+{
+    public static int  choclate(int a[] ,int size ,int student)
+    {
+        if(size==0 || student==0)
+         return 0;
+        Arrays.sort(a);
+        if(size<student)
+        {
+            System.out.print("It's not possible \n");
+        }
+        int min_diff = Integer.MAX_VALUE;
+        for(int i=0;i+student-1<size;i++)
+        {
+            int diff = a[i+student-1]-a[i];
+            if(diff<min_diff)
+            {
+                min_diff=diff;
+            }
+        }
+        return min_diff;
+    }
+    public static void main(String[] args)
+    {
+        
+        int a[]={2,5,9,3,6,45,67,42,49,57,51,55};
+        int student=4;
+        int size = a.length;
+        
+        System.out.print(choclate(a,size,student));
+        
+    }
+}
